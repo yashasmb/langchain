@@ -1,2 +1,6 @@
 langchain
-ipykernel
+python-dotenv
+openai
+arxiv
+pymupdf
+langchain-text-splitters
