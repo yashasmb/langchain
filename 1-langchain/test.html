@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>HTML Test Playground</title>
+  <style>
+    :root { --bg: #0f172a; --fg: #e2e8f0; --muted: #94a3b8; --card: #111827; --accent: #22d3ee; }
+    html, body { height: 100%; }
+    body { margin: 0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji"; background: var(--bg); color: var(--fg); }
+    header, footer, nav, section, article, aside, main { padding: 1rem; }
+    header, footer { background: #0b1220; }
+    nav a { margin-right: .75rem; color: var(--accent); }
+    .card { background: var(--card); border-radius: 14px; padding: 1rem; box-shadow: 0 10px 30px rgba(0,0,0,.35); margin: 1rem 0; }
+    table { border-collapse: collapse; width: 100%; }
+    th, td { border: 1px solid #334155; padding: .5rem .75rem; text-align: left; }
+    thead th { background: #111827; }
+    tfoot td { color: var(--muted); font-size: .9rem; }
+    code, kbd, samp, pre { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; }
+    pre { background: #0b1220; padding: .75rem; border-radius: 10px; overflow: auto; }
+    .grid { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+    .muted { color: var(--muted); }
+    .btn { background: #1f2937; color: var(--fg); border: 1px solid #374151; border-radius: 999px; padding: .5rem 1rem; cursor: pointer; }
+    .btn:hover { background: #111827; }
+    figure { margin: 0; }
+    img { max-width: 100%; height: auto; border-radius: 12px; }
+    details { background: #0b1220; padding: .5rem .75rem; border-radius: 10px; }
+    mark { background: #fde68a; color: #111827; padding: 0 .25rem; border-radius: 4px; }
+    .flex { display: flex; gap: .75rem; align-items: center; flex-wrap: wrap; }
+    .spacer { height: .5rem; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>HTML Test Playground</h1>
+    <p class="muted">A single page that shows lots of HTML elements in action.</p>
+    <nav aria-label="Primary">
+      <a href="#typography">Typography</a>
+      <a href="#lists">Lists</a>
+      <a href="#table">Table</a>
+      <a href="#media">Media</a>
+      <a href="#forms">Forms</a>
+      <a href="#widgets">Widgets</a>
+      <a href="#graphics">Graphics</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="typography" class="card">
+      <h2>Typography, inline elements & line breaks</h2>
+      <p>
+        This is a paragraph. It has a <strong>strong</strong> word, an <em>emphasized</em> word, 
+        some <mark>highlighted</mark> text, an <abbr title="HyperText Markup Language">HTML</abbr> <span>inline <code>&lt;span&gt;</code></span>,
+        and a <a href="#" title="Dummy link">link</a>.
+        <br>
+        Here is a forced line break using <code>&lt;br&gt;</code> ➜ this sentence starts on a new line.
+      </p>
+      <p>
+        Quotes: <q cite="#">inline quote</q> and block quote below.
+      </p>
+      <blockquote cite="#">
+        “All models are wrong, but some are useful.” — <cite>George Box</cite>
+      </blockquote>
+      <div class="card" style="background:#0b1220">
+        <h3>DIV container demo</h3>
+        <p>This content is inside a <code>&lt;div&gt;</code> with custom styling.</p>
+        <div>Nested <div>DIVs <span class="muted">(nesting check)</span></div></div>
+      </div>
+      <p>Superscript E = mc<sup>2</sup> and H<sub>2</sub>O uses subscript. Keyboard: <kbd>Ctrl</kbd> + <kbd>S</kbd>.</p>
+      <pre><code>// Preformatted code block
+function hello(name){
+  console.log(`Hello, ${name}!`);
+}
+hello('World');
+</code></pre>
+      <hr>
+      <p class="muted"><small>Small print, <time datetime="2025-08-25">updated Aug 25, 2025</time>.</small></p>
+    </section>
+
+    <section id="lists" class="card">
+      <h2>Lists</h2>
+      <div class="grid">
+        <article>
+          <h3>Unordered List</h3>
+          <ul>
+            <li>Item A</li>
+            <li>Item B</li>
+            <li>Item C</li>
+          </ul>
+        </article>
+        <article>
+          <h3>Ordered List</h3>
+          <ol>
+            <li>First</li>
+            <li>Second</li>
+            <li>Third</li>
+          </ol>
+        </article>
+        <article>
+          <h3>Description List</h3>
+          <dl>
+            <dt>HTML</dt>
+            <dd>Markup language for documents.</dd>
+            <dt>CSS</dt>
+            <dd>Styles and layout.</dd>
+            <dt>JS</dt>
+            <dd>Interactivity and logic.</dd>
+          </dl>
+        </article>
+      </div>
+    </section>
+
+    <section id="table" class="card">
+      <h2>Table</h2>
+      <table>
+        <caption>Sample Scores</caption>
+        <thead>
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Subject</th>
+            <th scope="col">Score</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Ada</td>
+            <td>Math</td>
+            <td>95</td>
+          </tr>
+          <tr>
+            <td>Alan</td>
+            <td>CS</td>
+            <td>99</td>
+          </tr>
+          <tr>
+            <td>Grace</td>
+            <td>AI</td>
+            <td>97</td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td colspan="3">Total rows: 3</td>
+          </tr>
+        </tfoot>
+      </table>
+    </section>
+
+    <section id="media" class="card">
+      <h2>Media</h2>
+      <div class="grid">
+        <figure>
+          <img src="https://picsum.photos/600/360" alt="Random placeholder" />
+          <figcaption>Figure with an image and caption.</figcaption>
+        </figure>
+        <div>
+          <audio controls>
+            <source src="https://www.w3schools.com/html/horse.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+          </audio>
+          <div class="spacer"></div>
+          <video controls width="100%">
+            <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div>
+          <iframe title="Sandboxed iframe" style="width:100%;height:220px;border:1px solid #334155;border-radius:12px" sandbox="allow-scripts allow-same-origin" srcdoc='<!DOCTYPE html><html><body style="font-family:sans-serif"><p>Iframe via <code>srcdoc</code> ✔</p><button onclick="document.body.style.background=\'#eef\'">Click</button></body></html>'></iframe>
+        </div>
+      </div>
+    </section>
+
+    <section id="forms" class="card">
+      <h2>Forms</h2>
+      <form id="demo-form" oninput="o.value = Number(a.value) + Number(b.value)">
+        <fieldset>
+          <legend>Inputs</legend>
+          <div class="grid">
+            <label>Text <input type="text" placeholder="Your name" required></label>
+            <label>Email <input type="email" placeholder="you@example.com"></label>
+            <label>Password <input type="password" placeholder="••••••"></label>
+            <label>Number <input type="number" min="0" max="10" value="5"></label>
+            <label>Range <input id="a" type="range" min="0" max="100" value="40"></label>
+            <label>Range <input id="b" type="range" min="0" max="100" value="2"></label>
+            <label>Result <output name="o" for="a b">42</output></label>
+            <label>Date <input type="date"></label>
+            <label>Time <input type="time"></label>
+            <label>Color <input type="color" value="#22d3ee"></label>
+            <label>File <input type="file"></label>
+            <label>URL <input type="url" placeholder="https://"></label>
+            <label>
+              Select
+              <select>
+                <optgroup label="Group A">
+                  <option>Alpha</option>
+                  <option>Beta</option>
+                </optgroup>
+                <optgroup label="Group B">
+                  <option>Gamma</option>
+                  <option>Delta</option>
+                </optgroup>
+              </select>
+            </label>
+            <label>Textarea <textarea rows="2" placeholder="Say something..."></textarea></label>
+            <label>Checkbox <input type="checkbox" checked> Subscribe</label>
+            <label>Radio A <input type="radio" name="r" checked></label>
+            <label>Radio B <input type="radio" name="r"></label>
+            <label>Datalist 
+              <input list="letters" placeholder="Pick a letter" />
+              <datalist id="letters">
+                <option value="A"></option>
+                <option value="B"></option>
+                <option value="C"></option>
+              </datalist>
+            </label>
+            <label>Progress <progress value="70" max="100"></progress></label>
+            <label>Meter <meter min="0" max="100" low="25" high="75" optimum="85" value="66">66</meter></label>
+          </div>
+        </fieldset>
+        <p class="flex">
+          <button type="submit" class="btn">Submit</button>
+          <button type="reset" class="btn">Reset</button>
+        </p>
+        <p class="muted"><small>Address example: <address>221B Baker Street, London</address></small></p>
+      </form>
+    </section>
+
+    <section id="widgets" class="card">
+      <h2>Interactive widgets</h2>
+      <details>
+        <summary>Click to toggle details</summary>
+        <p>This content can be shown/hidden using the native <code>&lt;details&gt;</code> element.</p>
+      </details>
+      <div class="spacer"></div>
+      <dialog id="demo-dialog">
+        <p>Hello from a native <code>&lt;dialog&gt;</code> element!</p>
+        <form method="dialog">
+          <button class="btn">Close</button>
+        </form>
+      </dialog>
+      <button class="btn" id="open-dialog">Open Dialog</button>
+      <div class="spacer"></div>
+      <template id="row-template">
+        <li>Template item <strong>#<span class="num"></span></strong></li>
+      </template>
+      <ul id="templated-list" class="card"></ul>
+    </section>
+
+    <section id="graphics" class="card">
+      <h2>Graphics: Canvas & SVG</h2>
+      <div class="grid">
+        <canvas id="c" width="320" height="200" style="background:#0b1220;border:1px solid #334155;border-radius:12px"></canvas>
+        <svg viewBox="0 0 120 120" width="100%" height="200" role="img" aria-label="SVG demo" style="background:#0b1220;border:1px solid #334155;border-radius:12px">
+          <defs>
+            <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#22d3ee"/>
+              <stop offset="100%" stop-color="#a78bfa"/>
+            </linearGradient>
+          </defs>
+          <circle cx="60" cy="60" r="50" fill="url(#g)"/>
+          <text x="60" y="66" text-anchor="middle" font-size="14" fill="#0b1220">SVG ✔</text>
+        </svg>
+      </div>
+    </section>
+
+    <aside class="card">
+      <h3>Aside</h3>
+      <p class="muted">This is supplementary content placed in an <code>&lt;aside&gt;</code>.</p>
+    </aside>
+  </main>
+
+  <footer>
+    <p>&copy; <span id="year"></span> HTML Test Playground · <a href="#top">Back to top</a></p>
+  </footer>
+
+  <script>
+    // Year in footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Canvas drawing
+    (function(){
+      const ctx = document.getElementById('c').getContext('2d');
+      const w = ctx.canvas.width, h = ctx.canvas.height;
+      // Background gradient
+      const g = ctx.createLinearGradient(0,0,w,h);
+      g.addColorStop(0,'#22d3ee');
+      g.addColorStop(1,'#a78bfa');
+      ctx.fillStyle = g; ctx.fillRect(0,0,w,h);
+      // Moving dots
+      const dots = Array.from({length: 40}, (_,i)=>({x:Math.random()*w, y:Math.random()*h, r:2+Math.random()*3, dx:(Math.random()-.5)*1.2, dy:(Math.random()-.5)*1.2}));
+      function tick(){
+        ctx.fillStyle = 'rgba(17,24,39,0.35)';
+        ctx.fillRect(0,0,w,h);
+        for(const d of dots){
+          d.x += d.dx; d.y += d.dy;
+          if(d.x<0||d.x>w) d.dx*=-1; if(d.y<0||d.y>h) d.dy*=-1;
+          ctx.beginPath(); ctx.arc(d.x,d.y,d.r,0,Math.PI*2); ctx.fillStyle = '#fff'; ctx.fill();
+        }
+        requestAnimationFrame(tick);
+      }
+      tick();
+    })();
+
+    // Dialog
+    document.getElementById('open-dialog').addEventListener('click',()=>{
+      document.getElementById('demo-dialog').showModal();
+    });
+
+    // Template cloning
+    const list = document.getElementById('templated-list');
+    const tpl = document.getElementById('row-template');
+    for(let i=1;i<=5;i++){
+      const node = tpl.content.cloneNode(true);
+      node.querySelector('.num').textContent = i;
+      list.appendChild(node);
+    }
+  </script>
+</body>
+</html>

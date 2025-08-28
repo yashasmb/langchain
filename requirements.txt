@@ -4,3 +4,7 @@ openai
 arxiv
 pymupdf
 langchain-text-splitters
+langchain-openai
+sentence-transformers
+langchain-huggingface
+faiss-cpu
