@@ -9,4 +9,5 @@ sentence-transformers
 langchain-huggingface
 faiss-cpu
 chromadb
-langchain-chromad
+langchain-chromadb
+langchain-google-genai
