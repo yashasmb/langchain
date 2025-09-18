@@ -11,3 +11,6 @@ faiss-cpu
 chromadb
 langchain-chromadb
 langchain-google-genai
+langchain_ollama
+streamlit
+langchain_groq
